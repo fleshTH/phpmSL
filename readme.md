@@ -6,13 +6,15 @@ PHPmSL is an mSL interpreter written in PHP.
 Usage:
 --------
 
-    $m = new mSL(); 
-    $m->loadFile('
-        alias Hello {
-            echo <strong>Hello World!</strong>
-        }
-    '); 
-    $m->execScript("hello");
+```php
+$m = new mSL(); 
+$m->loadFile('
+    alias Hello {
+        echo <strong>Hello World!</strong>
+    }
+'); 
+$m->execScript("hello");
+```
 
 ChangeLog
 --------
