@@ -112,7 +112,7 @@ Class mSL {
 						$tstr = substr($str,$xindex+1,($i-1)-$xindex);
 						$r = Array();
 						//echo "FB::EVAL -> ".$this->findBrackets($tstr,$pargs,&$r) ."\n";
-						$xstr =  " " .$this->findBrackets($this->execLine($tstr,$pargs),$pargs,&$r);
+						$xstr =  " " .$this->findBrackets($this->execLine($tstr,$pargs),$pargs,$r);
 						//echo "<p><b> -> eval $tstr -> $xstr</b></p>";
 						//$str = substr($str,0,$xindex-1) . "<b>" . substr($str,$xindex-1,($i-1)-$xindex) . "</b>" . substr($str,$i+1);
 						$bindex[$xindex] = Array(($i-1)-$xindex,$xstr);
@@ -472,7 +472,7 @@ Class mSL {
 				if ($c[0] == '{') { 
 					$open = 0;
 					$lines[$i] = $c;
-					$code = $this->getBlock($lines,&$i);
+					$code = $this->getBlock($lines,$i);
 				}
 				else { 
 					$code = $c;
@@ -486,7 +486,7 @@ Class mSL {
 				if ($c[0] == '{') { 
 					$open = 0;
 					$lines[$i] = $c;
-					$code = $this->getBlock($lines,&$i);
+					$code = $this->getBlock($lines,$i);
 				}
 				else { 
 					$code = $c;
@@ -501,7 +501,7 @@ Class mSL {
 				if ($c[0] == '{') { 
 					$open = 0;
 					$lines[$i] = $c;
-					$code = $this->getBlock($lines,&$i);
+					$code = $this->getBlock($lines,$i);
 				}
 				else { 
 					$code = $c;
@@ -520,7 +520,7 @@ Class mSL {
 				if (count($conditionChain) > 0) { 
 					foreach($conditionChain as $t) { 
 						if ($t['key'] == "else") { 
-							$r = $this->execScript("\n" . $t['code'],&$pargs,$stack+1);
+							$r = $this->execScript("\n" . $t['code'],$pargs,$stack+1);
 							if (is_array($r)) {
 								if ($stack==0) {
 									unset($this->_localvars[$this->l_stack]);
@@ -543,7 +543,7 @@ Class mSL {
 						}
 						$co = $this->testCondition($t['condition'],$pargs);
 						if ($co) { 
-							$r = $this->execScript("\n" . $t['code'],&$pargs,$stack+1);
+							$r = $this->execScript("\n" . $t['code'],$pargs,$stack+1);
 							if (is_array($r)) { 
 								if ($stack==0) {
 									unset($this->_localvars[$this->l_stack]);
@@ -581,13 +581,13 @@ Class mSL {
 				if ($c[0] == '{') { 
 					$open = 0;
 					$lines[$i] = $c;
-					$code = $this->getBlock($lines,&$i);
+					$code = $this->getBlock($lines,$i);
 				}
 				else { 
 					$code = $c;
 				}
 				while ($this->testCondition($p[0],$pargs)) {
-					$r = $this->execScript("\n" . $code,&$pargs,($stack+1));
+					$r = $this->execScript("\n" . $code,$pargs,($stack+1));
 					if (is_array($r)) {
 						if ($stack==0) {
 							unset($this->_localvars[$this->l_stack]);
