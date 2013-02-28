@@ -1,6 +1,24 @@
+PHPmSL
+========
 
-9/18/09
-============================================
+PHPmSL is an mSL interpreter written in PHP.
+
+Usage:
+--------
+
+    $m = new mSL(); 
+    $m->loadFile('
+        alias Hello {
+            echo <strong>Hello World!</strong>
+        }
+    '); 
+    $m->execScript("hello");
+
+Updates
+--------
+
+
+#### 9/18/09 ####
 Notes:
   added hash table support
   fixed issues with $regsubex
@@ -14,20 +32,18 @@ Notes:
 
 
 
-
-9/03/09
-==============================================================
+#### 9/03/09 ####
 Notes/change log
 
 -Made the parser into a class. I have changes a few of the method names
  for example, it's no longer parseMlines and parseMirc,
  parseMlines is now execScript. parseMirc is now execLine.
 
-<?
- $m = new mSL();
- $m->loadScript($_post['data']);
- $m->execScript("test"); // to execute the alias named test.
-?>
+    <?
+        $m = new mSL();
+        $m->loadFile($_post['data']);
+        $m->execScript("test"); // to execute the alias named test.
+    ?>
 
 -alias are stored in a static member of the mSL class.
  so, to access it, just use mSL::aliases.
