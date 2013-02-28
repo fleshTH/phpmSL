@@ -1,5 +1,5 @@
 
-<?
+<?php
 Class socket { 
 	public static $sockets = Array();
 	public $prop = Array();

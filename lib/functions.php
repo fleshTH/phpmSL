@@ -1,5 +1,5 @@
 
-<?
+<?php
 if (isset($_GET['num'])) { 
 ob_start();
 }
@@ -10,7 +10,7 @@ Class Functions {
 	function ___set_parent($obj) { 
 		$this->parent = $obj;
 	}
-<?
+<?php
 	include_once('time_date_identifiers.php');
 	include_once('text_identifiers.php');
 	include_once('token_identifiers.php');
@@ -22,7 +22,7 @@ Class Functions {
 	include_once('bvar_functions.php');
 ?>
 }
-<?
+<?php
 if (isset($_GET['num'])) { 
 	$x = ob_get_contents();
 	ob_end_clean();

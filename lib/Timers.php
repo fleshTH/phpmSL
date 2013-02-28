@@ -1,5 +1,5 @@
 
-<?
+<?php
 Class Timer { 
 	public static $timers = Array();
 	public static $ltimer;
