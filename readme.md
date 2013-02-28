@@ -1,7 +1,7 @@
 PHPmSL
 ========
 
-PHPmSL is an mSL interpreter written in PHP.
+PHPmSL is an mSL interpreter written in PHP. See [supported constructs list](supported.md). As well as our [todo list](todo.md).
 
 Usage:
 --------
