@@ -285,7 +285,7 @@ Class mSL {
 									$popen--;
 								}
 							}
-							else if ($str[i] == '$' && ($str[$i-1] == null || $str[$i-1] == " ")) {
+							else if ($str[$i] == '$' && ($str[$i-1] == null || $str[$i-1] == " ")) {
 								$inIdent++;
 							}
 							if ($popen == 0) { 
@@ -884,7 +884,7 @@ function parseCondition($str) {
 		
 			}
 		}
-		else if ($str[i] == '$' && ($str[$i-1] == null || $str[$i-1] == " ")) {
+		else if ($str[$i] == '$' && ($str[$i-1] == null || $str[$i-1] == " ")) {
 			$inIdent++;
 		}
 		else if ($popen == 1 && !$inIdent) { 
@@ -1130,7 +1130,7 @@ function parseCalc($str) {
 				}
 				
 			}	
-			else if ($str[i] == '$' && ($str[$i-1] == null || $str[$i-1] == " ")) {
+			else if ($str[$i] == '$' && ($str[$i-1] == null || $str[$i-1] == " ")) {
 				$inIdent++;
 			}	
 			else if ($popen == 1 && !$inIdent) { 
