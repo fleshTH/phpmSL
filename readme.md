@@ -19,6 +19,10 @@ $m->execScript("hello");
 ChangeLog
 --------
 
+#### 03/01/2013 ####
+  * Identifier return value no longer trim values.
+  * The iswm/iswmcs operators have been fixed.
+
 #### 9/18/09 ####
   * Added hash table support
   * Fixed issues with $regsubex
