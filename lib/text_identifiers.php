@@ -49,6 +49,9 @@
 			$wrap(text, font, size, width, [word,] N)
 			$xor(A,B)
 	*/
+        function asc($s) { 
+                return ord($s);
+        }
 	function md5($str) { 
 		return md5($str);
 	}
