@@ -400,7 +400,7 @@ Class mSL {
 		}
 		unset($localParams[$stackNumber]);
                 $stackNumber--;
-		return trim($this->setVars($out));
+		return $this->setVars($out);
 
 	
 	}
