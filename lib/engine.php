@@ -81,7 +81,7 @@ Class mSL {
 	function addAlias($aname,$code) { 
 		self::$aliases[$aname] = $code;
 	}
-	function findBrackets($str,$pargs,$bindex) { 
+	function findBrackets($str,$pargs,&$bindex) { 
 		$bopen = 0;
 		$isOpen = false;
 		$xindex = 0;
@@ -419,7 +419,7 @@ Class mSL {
 
 
 
-	function execScript($str,$pargs=Array(),$stack=0) { 
+	function execScript($str,&$pargs=Array(),$stack=0) { 
 		//global $_scope,$aliases;
 		if ($stack == 0) { 
 			$this->l_stack++;
@@ -767,7 +767,7 @@ Class mSL {
 		//var_dump(self::$events);
 	}
 
-function getBlock($lines,$i) { 
+function getBlock($lines,&$i) { 
 	$code = "";
 	$open = 1;
 	for (;$open!=0;$i++) { 
