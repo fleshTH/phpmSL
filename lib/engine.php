@@ -830,6 +830,12 @@ function isnumfunc($v1,$v2=null) {
 		return is_numeric($v1);
 	}
 }
+function iswmfunc($v2,$v1) { 
+        return $this->isWildCardMatch($v1,$v2);
+}
+function iswmfunccs($v2,$v1) { 
+        return $this->isWildCardMatch($v1,$v2,1);
+}
 
 
 function parseCondition($str) { 
@@ -987,7 +993,7 @@ $cond = $this->execLine($cond,$pargs);
 $operatorArray = Array(
 "isin" => "isinfunc",
 "isincs" => "isincsfunc",
-"iswm" => "isiwmfunc",
+"iswm" => "iswmfunc",
 "iswmcs" => "iswmcsfunc",
 "isnum" => "isnumfunc",
 "isletter" => "isletterfunc",
