@@ -16,9 +16,14 @@
 		}
 		$sockname = $this->parent->_scope['defined']['sockname'];
 		if ($sockname) {
-			$read = mSL::$sockets[$sockname]->sockread();
+			$read = rtrim(mSL::$sockets[$sockname]->sockread(),"\r\n");
 			$this->parent->_scope['defined']['sockbr'] = strlen($read);
-			$this->mirc_var(explode(" ",$args[0] . " $read"));
+			if ($args[0][0] == "&") { 
+				$this->mirc_bset("-t 1 " . $args[0] . " " .$read);
+			}
+			else {
+				$this->mirc_var(explode(" ",$args[0] . " $read"));
+			}
 		}
 	}
 	function mirc_sockwrite($args) {
