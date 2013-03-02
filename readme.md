@@ -30,6 +30,8 @@ ChangeLog
 
 
   * Made the parser into a class. I have changes a few of the method names for example, it's no longer parseMlines and parseMirc, parseMlines is now execScript. parseMirc is now execLine.
+
+
 ```php
     <?php
         $m = new mSL();
@@ -40,6 +42,7 @@ ChangeLog
   * alias are stored in a static member of the mSL class. so, to access it, just use mSL::aliases.
 
   * added all functions to it's own class. when checking if a function exists use this
+
 ```php
     <?php
         if (method_exists($this->function,$funcName)) {
