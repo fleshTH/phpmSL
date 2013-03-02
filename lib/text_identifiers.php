@@ -318,7 +318,7 @@ function base($val,$from,$to,$pad = 0,$precision = 12) { /* thanks to ramirez fo
 	}
 
 	function mirc_echo($args) {
-		echo implode(" ",$args) . "<br>"; 
+		echo implode(" ",$args) . "\n"; 
 	}
 	function mirc_var($args) { 
 		$_scope = &$this->parent->_localvars[$this->parent->l_stack];
