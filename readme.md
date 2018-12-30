@@ -30,7 +30,7 @@ ChangeLog
   * Added more support for events
   * Fixed bugs with variables not staying in scope
 
-#### 9/03/09 ####
+#### 9/03/09 #### 
 
 
   * Made the parser into a class. I have changes a few of the method names for example, it's no longer parseMlines and parseMirc, parseMlines is now execScript. parseMirc is now execLine.
